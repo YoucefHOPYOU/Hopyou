@@ -1,0 +1,235 @@
+    
+    <style>
+    /* Style de base */
+    body, html {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        box-sizing: border-box;
+    }
+
+    /* En-tête fixe */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+        background-color: #FFF;
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .logo img {
+        height: 60px;
+    }
+
+    .header-links {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap; /* Permettre le passage en colonne sur mobile */
+}
+    
+
+    .header-links a {
+        text-decoration: none;
+        color: #6B00B6;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .phone, .whatsapp-button, .languages {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 24px;
+        font-weight: bold;
+        color: #5e2492;
+    
+    }
+    .whatsapp-button img{
+        width: 24px;
+        height: 24px;
+    }
+
+    .languages {
+        display: flex;
+        gap: 10px;
+    }
+
+    .languages .language img {
+        width: 20px;/* Ajustez la taille pour les drapeaux */
+        height: auto;
+        transition: transform 0.3.s; /* Correction de la durée de la transition */
+    }
+
+    .languages .language img:hover {
+        transform: scale(1.1em);
+    }
+
+    /* Menu Hamburger */
+    .menu-toggle {
+        font-size: 24px;
+        cursor: pointer;
+        color: #6B00B6;
+        display: none; /* uniquement version mobile */ 
+    }
+   
+
+    /* Menu mobile */
+    .menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background-color: #FFF;
+        position: absolute;
+        top: 80px;
+        width: 80%;
+        left: 5%;
+        border-radius: 8px;
+        padding: 10px 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 999;
+    }
+
+    .menu a {
+        padding: 10px 0;
+        width: 100%;
+        text-align: center;
+        text-decoration: none;
+        color: #6B00B6;
+        font-weight: bold;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    /* Section couverture */
+    .cover {
+        background-image: url('photodecouv.png');
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        padding-top: 80px;
+    }
+   
+
+
+    .cover h1 {
+        font-size: 2em;
+        font-weight: bold;
+        margin: 20px 0;
+        max-width: 90%;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+    }
+
+    /* Boutons de téléchargement dans la couverture */
+    .download-buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .download-buttons img {
+        width: 120px;
+    }
+
+    /* Section de contenu */
+    .app-section {
+        text-align: center;
+        padding: 40px 20px;
+        background-color: #f7f7f7;
+    }
+
+    .section-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        flex-wrap: wrap;
+    }
+
+    .section-image img {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 10px;
+    }
+
+    .section-text {
+        max-width: 600px;
+        text-align: left;
+    }
+
+    .section-text h2 {
+        font-size: 2em;
+        color: #6B00B6;
+    }
+
+    .section-text p {
+        font-size: 1.1em;
+        color: #333;
+    }
+
+    /* Section "Comment ça marche" avec 3 images */
+    .how-it-works {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .how-it-works .step {
+        text-align: center;
+        max-width: 250px;
+    }
+
+    .how-it-works img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    /* Adaptation mobile */
+    @media (max-width: 768px) {
+        .menu-toggle {
+            display: block;
+            width: 50PX;
+            
+        }
+
+        .header-links {
+            display: none;
+        }
+
+        .section-content, .how-it-works {
+            flex-direction: column;
+        }
+        .section-image img, .section-text {
+            max-width: 100%;
+        }
+    }
+
+    /* Pied de page */
+    footer {
+        background-color: #9439e8;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+    }
+
+    footer a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+</style>

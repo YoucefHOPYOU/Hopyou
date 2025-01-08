@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Hopyou VTC</title>
+    <style>
+        /* Style général */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        /* Header */
+        header {
+           
+            color: rgb(8, 8, 8);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        header nav a {
+            color: rgb(8, 8, 8);
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        header nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Barre de recherche */
+        .search-bar {
+            padding: 20px;
+            text-align: center;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-bar input {
+            width: 60%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Liste des articles */
+        .blog-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .blog-list article {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .blog-list article:hover {
+            transform: translateY(-5px);
+            box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .blog-list article img {
+            max-width: 100%;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .blog-list article h2 {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        .blog-list article p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            
+            color: rgb(215, 20, 20);
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- En-tête -->
+    <header>
+        <h1>Blog - Hopyou VTC</h1>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="reservation.html">Réserver</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Barre de recherche -->
+    <section class="search-bar">
+        <input type="text" id="searchInput" placeholder="Rechercher un article..." onkeyup="searchArticles()">
+    </section>
+
+    <!-- Liste des articles -->
+    <section class="blog-list" id="blogList">
+        <article data-title="5 astuces pour un trajet VTC confortable">
+            <img src="article1.jpg" alt="Image d'article">
+            <h2><a href="article1.html">5 astuces pour un trajet VTC confortable</a></h2>
+            <p>Découvrez nos conseils pour un trajet agréable avec un chauffeur VTC.</p>
+        </article>
+        <article data-title="Pourquoi choisir un VTC au lieu d'un taxi ?">
+            <img src="article2.jpg" alt="Image d'article">
+            <h2><a href="article2.html">Pourquoi choisir un VTC au lieu d'un taxi ?</a></h2>
+            <p>Les avantages des services de VTC par rapport aux taxis traditionnels.</p>
+        </article>
+        <article data-title="Les meilleures applications pour réserver un VTC">
+            <img src="article3.jpg" alt="Image d'article">
+            <h2><a href="article3.html">Les meilleures applications pour réserver un VTC</a></h2>
+            <p>Explorez les meilleures applications pour une réservation rapide et facile.</p>
+        </article>
+    </section>
+
+    <!-- Pied de page -->
+    <footer>
+        <p>© 2025 Hopyou VTC - Tous droits réservés.</p>
+    </footer>
+
+    <!-- Script JS pour la recherche -->
+    <script>
+        function searchArticles() {
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const articles = document.querySelectorAll('.blog-list article');
+
+            articles.forEach(article => {
+                const title = article.dataset.title.toLowerCase();
+                if (title.includes(searchInput)) {
+                    article.style.display = 'block';
+                } else {
+                    article.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

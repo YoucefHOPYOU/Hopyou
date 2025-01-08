@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment Réserver sur Hopyou</title>
+    <style>
+        /* Style général */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .app-guide-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            background-color: #ffffff;
+            gap: 20px;
+        }
+
+        .text-content {
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .text-content h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .text-content p {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        /* Images de l'application */
+        .app-images {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .app-img {
+            max-width: 150px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .options-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            background-color: #ffffff;
+            gap: 20px;
+        }
+
+        .text-content {
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .text-content h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .text-content p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .options-list {
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .options-list li {
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        /* Images de l'application */
+        .app-images {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .app-img {
+            max-width: 150px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .steps-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.step {
+    margin-bottom: 30px;
+}
+
+.step h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.step p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Responsive Design pour mobile */
+@media (max-width: 768px) {
+    .steps-section {
+        padding: 20px;
+    }
+
+    .step h2 {
+        font-size: 1.5rem;
+    }
+
+    .step p {
+        font-size: 0.9rem;
+    }
+}
+
+        /* Responsive Design pour mobile */
+        @media (max-width: 768px) {
+            .options-section {
+                flex-direction: column;
+            }
+
+            .app-images {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .app-img {
+                max-width: 200px;
+            }
+
+            .text-content h2 {
+                font-size: 1.5rem;
+            }
+
+            .options-list li {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Responsive Design pour mobile */
+        @media (max-width: 768px) {
+            .app-guide-section {
+                flex-direction: column;
+            }
+
+            .app-images {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .app-img {
+                max-width: 200px;
+            }
+
+            .text-content h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<section class="app-guide-section">
+    <div class="text-content">
+        <h2>Comment réserver un taxi ou VTC sur l'application Hopyou</h2>
+        <p><strong>Étape 1 :</strong> Saisir votre adresse de départ et de destination dans l'application.</p>
+        <p><strong>Étape 2 :</strong> Choisissez les options supplémentaires comme le siège bébé ou l'animal de compagnie.</p>
+        <p><strong>Étape 3 :</strong> Confirmez votre réservation et suivez votre chauffeur en temps réel.</p>
+    </div>
+    <div class="app-images">
+        <img src="../applicationclient1.png" alt="Écran de réservation Hopyou" class="app-img">
+        <img src="../applicationclient2.png" alt="Options supplémentaires Hopyou" class="app-img">
+    </div>
+</section>
+<section class="options-section">
+    <div class="text-content">
+        <h2>Étape 4 : Ajouter des options supplémentaires</h2>
+        <p>Personnalisez votre trajet en ajoutant des options supplémentaires :</p>
+        <ul class="options-list">
+            <li><strong>Nombre de passagers :</strong> Indiquez le nombre de personnes.</li>
+            <li><strong>Nombre de bagages :</strong> Sélectionnez le nombre de bagages que vous transportez.</li>
+            <li><strong>Animal de compagnie :</strong> Précisez si vous voyagez avec un animal.</li>
+            <li><strong>Siège bébé :</strong> Demandez un siège bébé si nécessaire.</li>
+            <li><strong>Numéro de vol ou de train :</strong> Ajoutez votre numéro de vol ou de train pour faciliter la prise en charge.</li>
+            <li><strong>Demande spéciale :</strong> Mentionnez toute demande particulière pour un voyage sur mesure.</li>
+        </ul>
+    </div>
+    <div class="app-images">
+        <img src="../applicationclient3.png" alt="Écran d'options Hopyou" class="app-img">
+        <img src="../taxisiég-bébé.png" alt="Écran de confirmation Hopyou" class="app-img">
+    </div>
+</section>
+
+
+
+
+<section class="steps-section">
+<!-- Étape 4 -->
+<div class="step">
+<h2>Étape 5  : Choisir le type de véhicule</h2>
+<p>Choisissez la catégorie de véhicule qui correspond le mieux à vos besoins parmi les options disponibles, telles que berline, van, ou moto.</p>
+</div>
+
+<!-- Étape 5 -->
+<div class="step">
+<h2>Étape 6 : Envoyer votre demande</h2>
+<p>Après avoir configuré votre trajet, envoyez votre demande à tous les chauffeurs professionnels disponibles à proximité. Vous recevrez les meilleures offres rapidement.</p>
+</div>
+</section>
+
+</body>
+</html>

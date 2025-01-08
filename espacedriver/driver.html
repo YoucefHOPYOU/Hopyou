@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hopyou Drivers - Rejoignez-nous et gagnez plus</title>
+    
+    <style>
+        /* Style de base */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+        }
+
+        /* En-tête fixe */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background-color: #FFF;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo img {
+            height: 70px;
+        }
+
+        /* Section des liens et des langues */
+        .header-links {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .header-links a {
+            text-decoration: none;
+            color: #6B00B6;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        /* Icônes de drapeaux pour les langues */
+        .lang-select img {
+            width: 24px;
+            height: 15px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        /* Menu hamburger pour les autres liens */
+        .menu-toggle {
+            font-size: 24px;
+            cursor: pointer;
+            color: #6B00B6;
+            display: none;
+        }
+
+        /* Menu mobile */
+        .menu {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            background-color: #FFF;
+            position: absolute;
+            top: 70px;
+            width: 90%;
+            left: 5%;
+            border-radius: 8px;
+            padding: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+        }
+
+        .menu a {
+            padding: 10px 0;
+            width: 100%;
+            text-align: center;
+            text-decoration: none;
+            color: #6B00B6;
+            font-weight: bold;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .menu a:last-child {
+            border-bottom: none;
+        }
+
+        /* Section couverture */
+        .cover {
+            background-image: url('../espacedriver/arriereplan.png');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+            padding-top: 80px;
+        }
+        .download-buttons {
+    display: flex;
+    gap: 20px; /* Espace entre les boutons */
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.download-buttons a {
+    display: inline-block;
+    transition: transform 0.3s;
+}
+
+.download-buttons img {
+    width: 140px; /* Largeur des boutons */
+    height: auto;
+    border-radius: 8px; /* Arrondi des coins */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre autour des boutons */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Effet au survol */
+.download-buttons img:hover {
+    transform: scale(1.05); /* Agrandissement au survol */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Augmentation de l'ombre au survol */
+}
+
+
+        .cover h1 {
+            font-size: 2em;
+            font-weight: bold;
+            margin: 20px 0;
+            max-width: 90%;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+        }
+
+        /* Section Avantages */
+        .benefits {
+            background-color: #F8F8F8;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .benefits h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #6B00B6;
+        }
+
+        .benefit-item {
+            margin: 20px 0;
+            font-size: 1.1em;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Section Rentabilité avec photo */
+        .rentability {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            gap: 20px;
+        }
+
+        .rentability img {
+            width: 300px;
+            border-radius: 8px;
+        }
+
+        /* Section Charte Qualité avec photo */
+        .quality {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            gap: 20px;
+            background-color: #F8F8F8;
+        }
+
+        .quality img {
+            width: 300px;
+            border-radius: 8px;
+        }
+
+        /* Section Fonctionnalités */
+        .features {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #6B00B6;
+        }
+
+        .feature {
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .feature img {
+            width: 100px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* Bouton WhatsApp flottant */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+            z-index: 1000;
+        }
+
+        .whatsapp-button img {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Pied de page */
+        footer {
+            background-color: #9439e8;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .cover h1 {
+                font-size: 1.5em;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .feature {
+                flex-direction: column;
+            }
+
+            .rentability, .quality {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- En-tête -->
+    <header>
+        <div class="logo">
+            <img src="logo2.png" alt="Hopyou Logo">
+        </div>
+
+        <div class="header-links">
+            <a href="../index.html">Accueil</a>
+            <a href="../contact/contact.html">Contactez</a>
+            <div class="lang-select">
+                <img src="logofrance.png" alt="FR" onclick="setLanguage('fr')">
+                <img src="../iconen.png" alt="EN" onclick="setLanguage('en')">
+                <img src="../icones.png" alt="ES" onclick="setLanguage('es')">
+            </div>
+        </div>
+
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </header>
+
+    <!-- Menu mobile -->
+    <div class="menu" id="menu">
+        <a href="../index.html">Accueil</a>
+        <a href="#">Blog</a>
+        <a href="../aeroports/aeroport.html">Aéroport</a>
+    </div>
+
+    <!-- Section couverture -->
+    <div class="cover">
+        <h1>Rejoignez Hopyou – Conduisez en toute liberté et augmentez vos revenus !</h1>
+        <p>Chez Hopyou, nous vous offrons la liberté de fixer vos propres tarifs et d'accroître votre rentabilité.</p>
+        <div class="download-buttons">
+            <a href="https://apps.apple.com/fr/app/hopyou-driver/id6479308837" target="_blank">
+                <img src="appelstor.png" alt="Télécharger sur apple store">
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.hopyou.driver.app&hl=fr" target="_blank">
+                <img src="../playstor.png" alt="Télécharger sur Google Play">
+            </a>
+        </div>
+    </div>
+
+    <!-- Section Rentabilité avec photo -->
+    <div class="rentability">
+        <img src="../espacedriver/chauffeursouriant.png" alt="Image de rentabilité">
+        <div>
+            <h3>Rentabilité Maximale</h3>
+            <p>Avec Hopyou, vous avez la liberté de déterminer vos tarifs tout en profitant d'un système de tarifs minimum pour garantir votre rentabilité.</p>
+        </div>
+    </div>
+
+    <!-- Section Charte Qualité avec photo -->
+    <div class="quality">
+        <img src="../espacedriver/chauffeur1.png" alt="Image de charte qualité">
+        <div>
+            <h3>Charte de Qualité</h3>
+            <p>Chez Hopyou, tous nos chauffeurs respectent une charte de qualité assurant ponctualité, sécurité et professionnalisme pour chaque trajet, afin de garantir un service de haute qualité.</p>
+        </div>
+    </div>
+
+    <!-- Section Fonctionnalités pour les chauffeurs -->
+    <div class="features">
+        <h2>Fonctionnalités de l'application pour chauffeurs</h2>
+        <div class="feature">
+            <img src="applicationclient1.png" alt="fixez vos tarifs">
+            <div>
+                <h3>Fixez Vos Propres Tarifs</h3>
+                <p>Adaptez vos prix selon la demande et maximisez vos revenus grâce à la liberté de choix de vos tarifs.</p>
+            </div>
+        </div>
+        <div class="feature">
+            <img src="applicationclient2.png" alt="Planifiez vos courses">
+            <div>
+                <h3>Planifiez Vos Courses à l'Avance</h3>
+                <p>Organisez vos journées en toute tranquillité en recevant des réservations à l'avance.</p>
+            </div>
+        </div>
+        <div class="feature">
+            <img src="applicationclient3.png" alt="Suivi des courses">
+            <div>
+                <h3>Suivi des Courses Simplifié</h3>
+                <p>Suivez facilement vos trajets terminés et gérez vos transactions en toute simplicité.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bouton WhatsApp flottant -->
+    <a href="https://wa.me/3383539532" target="_blank" class="whatsapp-button">
+        <img src="../iconwhatsapp.png" alt="WhatsApp"> <!-- Remplacez par une icône WhatsApp -->
+    </a>
+
+    <!-- Pied de page -->
+    <footer>
+        <p>&copy; 2024 Hopyou. Tous droits réservés.</p>
+        <nav>
+            <a href="../index.html">Accueil</a> |
+            <a href="../contact/contact.html">Contact</a> |
+            <a href="../cgv/cgv.html">Conditions Générales de Vente</a> |
+            <a href="../pdc/pdc.html">Politique de Confidentialité</a>
+        </nav>
+    </footer>
+
+    <!-- Script JavaScript pour le menu hamburger -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+

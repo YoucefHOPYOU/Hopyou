@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📞Taxi Aéroport - Réserver un Chauffeur pour Tous Vos Transferts</title>
+    <meta name="description" content="Besoin d'un taxi aéroport ? Réservez dès maintenant pour vos transferts vers Orly, CDG, Lyon, Marseille et plus. Tarifs fixes et chauffeurs professionnels disponibles 24/7.">
+    <meta name="keywords" content="taxi aéroport, taxi aeroport, taxi aéroport orly, taxi aéroport CDG, taxi aeroport marseille, taxi aeroport lyon, taxi aeroport nice, taxi aéroport pas cher">
+    <style>
+        /* Style de base */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+        }
+
+        /* En-tête fixe */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background-color: #FFF;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo img {
+            height: 70px;
+        }
+
+        /* Section des liens et des langues */
+        .header-links {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .header-links a {
+            text-decoration: none;
+            color: #6B00B6;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .lang-select img {
+            width: 24px;
+            height: 16px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        /* Section couverture */
+        .cover {
+            background-image: url('../aeroport/aeroportsphoto.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+            padding-top: 80px;
+        }
+
+        .cover h1 {
+            font-size: 2em;
+            font-weight: bold;
+            margin: 20px 0;
+            max-width: 90%;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+        }
+
+        .content-section {
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .content-section h2 {
+            color: #6B00B6;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .content-section p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* Boutons */
+        .download-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .download-buttons img {
+            width: 150px;
+            cursor: pointer;
+        }
+
+        /* Bouton WhatsApp flottant */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+            z-index: 1000;
+        }
+
+        .whatsapp-button img {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Pied de page */
+        footer {
+            background-color: #9439e8;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        @media (max-width: 768px) {
+    .header-links a {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: inline-block; /* Assurez-vous que le bouton hamburger reste visible */
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- En-tête avec logo, langues et liens essentiels -->
+    <header>
+        <div class="logo">
+            <img src="logo2.png" alt="Hopyou Logo">
+        </div>
+
+        <div class="header-links">
+            <a href="../index.html">Accueil</a>
+            <a href="../contact/contact.html">Contactez-nous</a>
+            <div class="lang-select">
+               
+            </div>
+        </div>
+
+
+        <div id="custom-menu">
+            <!-- Bouton Toggle -->
+            <button class="menu-toggle" id="menu-toggle">☰</button>
+        
+            <!-- Menu Mobile -->
+            <nav class="mobile-menu" id="mobile-menu">
+                <button class="menu-close" id="menu-close">✖</button>
+                <ul>
+                    <li><a href="/index.html">Accueil</a></li>
+                    <li><a href="/devis-taxi/devis-taxi.html">Devis Taxi</a></li>
+                    <li><a href="/espacedriver/driver.html">Espace Drivers</a></li>
+                    <li><a href="/contact/contact.html">Contactez-nous</a></li>
+                    <li><a href="./taxi-aéroport-d'orly.html">Aéroport d'Orly</a></li>
+                    <li><a href="./taxi-aéroport-charles-de-gaulle.html">Aéroport Charles de Gaulle</a></li>
+                </ul>
+        
+                <!-- Boutons supplémentaires -->
+                <a href="tel:0980800462" class="call-button">📞 Appelez-nous</a>
+                <a href="../devis-taxi/devis-taxi.html" class="devis-button">📝 Demander un Devis</a>
+            </nav>
+        </div>
+        
+        <style>
+            /* Masquer le menu hamburger sur les écrans desktop */
+@media (min-width: 768px) {
+    #custom-menu {
+        display: none;
+    }
+}
+
+            /* Styles isolés pour le menu toggle */
+            #custom-menu {
+                position: fixed;
+                top: 10px;
+                right: 10px;
+                z-index: 1000;
+            }
+        
+            /* Bouton Toggle (Menu Burger) */
+            .menu-toggle {
+                font-size: 1.5rem;
+                background-color: #6B00B6;
+                color: white;
+                border: none;
+                padding: 10px;
+                border-radius: 50%;
+                cursor: pointer;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+                transition: transform 0.3s ease, background-color 0.3s ease;
+            }
+        
+            .menu-toggle:hover {
+                background-color: #55008c;
+                transform: scale(1.1);
+            }
+        
+            /* Menu Mobile sur la droite */
+            .mobile-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100%;
+                background-color: #f4f4f9;
+                box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+                transition: right 0.4s ease;
+                display: flex;
+                flex-direction: column;
+                padding: 20px;
+                z-index: 999;
+            }
+        
+            .mobile-menu.active {
+                right: 0;
+            }
+        
+            /* Bouton pour fermer le menu */
+            .menu-close {
+                align-self: flex-end;
+                font-size: 1.5rem;
+                color: #333;
+                background: none;
+                border: none;
+                cursor: pointer;
+                margin-bottom: 20px;
+            }
+        
+            .menu-close:hover {
+                color: #6B00B6;
+            }
+        
+            /* Liens du menu */
+            .mobile-menu ul {
+                list-style: none;
+                padding: 0;
+            }
+        
+            .mobile-menu li {
+                margin: 15px 0;
+            }
+        
+            .mobile-menu a {
+                text-decoration: none;
+                font-size: 1.1rem;
+                color: #333;
+                font-weight: bold;
+                transition: color 0.3s ease;
+            }
+        
+            .mobile-menu a:hover {
+                color: #6B00B6;
+            }
+        
+            /* Boutons supplémentaires */
+            .call-button, .devis-button {
+                display: block;
+                margin: 15px 0;
+                padding: 10px;
+                text-align: center;
+                color: white;
+                border-radius: 5px;
+                font-size: 1rem;
+                font-weight: bold;
+                text-decoration: none;
+                transition: background-color 0.3s ease;
+            }
+        
+            .call-button {
+                background-color: #007bff;
+            }
+        
+            .call-button:hover {
+                background-color: #0056b3;
+            }
+        
+            .devis-button {
+                background-color: #28a745;
+            }
+        
+            .devis-button:hover {
+                background-color: #218838;
+            }
+        </style>
+        
+        <!-- Script JavaScript -->
+        <script>
+            // Toggle pour ouvrir/fermer le menu
+            const menuToggle = document.getElementById("menu-toggle");
+            const menuClose = document.getElementById("menu-close");
+            const mobileMenu = document.getElementById("mobile-menu");
+        
+            menuToggle.addEventListener("click", () => {
+                mobileMenu.classList.add("active");
+            });
+        
+            menuClose.addEventListener("click", () => {
+                mobileMenu.classList.remove("active");
+            });
+        </script>
+        
+    </header>
+    
+
+
+
+    <!-- Section couverture -->
+    <div class="cover">
+        <h1>Taxi Aéroport - Simplifiez vos déplacements avec Hopyou</h1>
+        <p>Réservez un taxi vers les aéroports de Paris en toute sérénité</p>
+        <div class="download-buttons">
+            <a href="https://apps.apple.com/fr/app/hopyou/id6479308924" target="_blank">
+                <img src="appelstor.png" alt="Télécharger sur l'App Store">
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.hopyou.client.app&hl=fr" target="_blank">
+                <img src="playstor.png" alt="Télécharger sur Google Play">
+            </a>
+        </div>
+    </div>
+    <style>
+        /* Section Call-to-Action */
+        .cta-modern {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #ffffff;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            max-width: 900px;
+            margin: 40px auto;
+            overflow: hidden;
+        }
+
+        .cta-modern h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+            color: #ffffff; /* Couleur blanche */
+            animation: fadeInDown 1s ease-in-out;
+        }
+
+        .cta-modern p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        /* Boutons */
+        .cta-btn {
+            display: inline-block;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 15px 35px;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            margin: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn-call {
+            background: #ff5722;
+        }
+
+        .btn-call:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(255, 87, 34, 0.5);
+        }
+
+        .btn-devis {
+            background: #629bd8;
+        }
+
+        .btn-devis:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 123, 255, 0.5);
+        }
+
+        .btn-whatsapp {
+            background: #25d366;
+        }
+
+        .btn-whatsapp:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsivité */
+        @media (max-width: 768px) {
+            .cta-modern h2 {
+                font-size: 2rem;
+            }
+
+            .cta-modern p {
+                font-size: 1rem;
+            }
+
+            .cta-btn {
+                font-size: 1rem;
+                padding: 12px 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cta-modern h2 {
+                font-size: 1.8rem;
+            }
+
+            .cta-modern p {
+                font-size: 0.9rem;
+            }
+
+            .cta-btn {
+                font-size: 0.9rem;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="cta-modern">
+        <h2>🚖 Réservez Votre Taxi Immédiatement</h2>
+        <p>
+            Besoin d'un taxi ou d'un devis rapide ? Contactez-nous maintenant par téléphone, demandez un devis en ligne, ou discutez directement avec nous via WhatsApp.
+        </p>
+        <a href="tel:0980800462" class="cta-btn btn-call">
+            📞 Appeler le 09 80 80 04 62
+        </a>
+        <a href="../devis-taxi/devis-taxi.html" class="cta-btn btn-devis">
+            📝 Demander un devis
+        </a>
+        <a href="https://wa.me/33659274465" target="_blank" class="cta-btn btn-whatsapp">
+            💬 Contact WhatsApp
+        </a>
+    </section>
+    
+    <div class="transfer-section">
+        <style>
+            .transfer-section {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 20px;
+                padding: 20px;
+                background-color: #f9f9f9;
+            }
+    
+            .transfer-card {
+                background: white;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                text-align: center;
+                padding: 20px;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+    
+            .transfer-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            }
+    
+            .transfer-card img {
+                width: 100%;
+                height: 150px;
+                object-fit: cover;
+                border-radius: 8px;
+                margin-bottom: 15px;
+            }
+    
+            .transfer-card h3 {
+                font-size: 18px;
+                color: #333;
+                margin-bottom: 15px;
+            }
+    
+            .transfer-card a {
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: #007BFF;
+                color: white;
+                text-decoration: none;
+                border-radius: 5px;
+                font-weight: bold;
+                transition: background-color 0.3s ease;
+            }
+    
+            .transfer-card a:hover {
+                background-color: #0056b3;
+            }
+        </style>
+    
+        <div class="transfer-card">
+            <img src="aéroport cdg.png" alt="Transfert aéroport Charles de Gaulle">
+            <h3>Transfert aéroport Charles de Gaulle</h3>
+            <a href="/pages/taxi-aéroport-charles-de-gaulle.html">Plus d'infos</a>
+        </div>
+    
+        <div class="transfer-card">
+            <img src="marseille aéroport.png" alt="Transfert aéroport Marseille">
+            <h3>Transfert aéroport Marseille</h3>
+            <a href="#">Plus d'infos</a>
+        </div>
+    
+        <div class="transfer-card">
+            <img src="aéroport bordeaux.png" alt="Transfert aéroport Bordeaux">
+            <h3>Transfert aéroport Bordeaux</h3>
+            <a href="#">Plus d'infos</a>
+        </div>
+    
+        <div class="transfer-card">
+            <img src="aéroport lile.png" alt="Transfert aéroport Lille">
+            <h3>Transfert aéroport Lille</h3>
+            <a href="#">Plus d'infos</a>
+        </div>
+    
+        <div class="transfer-card">
+            <img src="aéroport montpelier.png" alt="Transfert aéroport Montpellier">
+            <h3>Transfert aéroport Montpellier</h3>
+            <a href="#">Plus d'infos</a>
+        </div>
+    
+        <div class="transfer-card">
+            <img src="aéroport lyon.png" alt="Transfert aéroport Lyon">
+            <h3>Transfert aéroport Lyon</h3>
+            <a href="#">Plus d'infos</a>
+        </div>
+    
+        <div class="transfer-card">
+            <img src="aéroport nice.png" alt="Transfert aéroport Nice">
+            <h3>Transfert aéroport Nice</h3>
+            <a href="#">Plus d'infos</a>
+        </div>
+    
+        <div class="transfer-card">
+            <img src="aeroport orly.png" alt="Transfert aéroport Orly">
+            <h3>Transfert aéroport Orly</h3>
+            <a href="/pages/taxi-aéroport-d'orly.html">Plus d'infos</a>
+        </div>
+    
+        <div class="transfer-card">
+            <img src="aéroport beauvais.png" alt="Transfert aéroport Beauvais">
+            <h3>Transfert aéroport Beauvais</h3>
+            <a href="#">Plus d'infos</a>
+        </div>
+    </div>
+    <div class="welcome-section">
+        <style>
+            .welcome-section {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background-color: #f9f9f9;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                margin: 20px auto;
+                max-width: 1200px;
+            }
+    
+            .welcome-text {
+                max-width: 50%;
+            }
+    
+            .welcome-text h3 {
+                font-size: 24px;
+                color: #007BFF;
+                margin-bottom: 15px;
+            }
+    
+            .welcome-text p {
+                font-size: 16px;
+                line-height: 1.6;
+                color: #333;
+            }
+    
+            .welcome-text p strong {
+                color: #007BFF;
+            }
+    
+            .welcome-image {
+                max-width: 40%;
+            }
+    
+            .welcome-image img {
+                width: 100%;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+        </style>
+    
+        <div class="welcome-text">
+            <h3>Un service d'accueil avec pancarte</h3>
+            <p>
+                Nos chauffeurs vous attendent <strong>gratuitement</strong> au niveau des arrivées, avec un accueil personnalisé et une pancarte portant votre nom.
+                Il vous suffit simplement de nous <strong>communiquer votre numéro de vol</strong> lors de la réservation, et nous nous chargeons du reste !
+            </p>
+        </div>
+    
+        <div class="welcome-image">
+            <img src="/accuilpancarte.png" alt="Service d'accueil avec pancarte">
+        </div>
+    </div>
+    <div class="flight-delay-section">
+        <style>
+            .flight-delay-section {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background-color: #f9f9f9;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                margin: 20px auto;
+                max-width: 1200px;
+                flex-wrap: wrap;
+            }
+    
+            .flight-delay-text {
+                max-width: 50%;
+                padding: 20px;
+            }
+    
+            .flight-delay-text h3 {
+                font-size: 24px;
+                color: #007BFF;
+                margin-bottom: 15px;
+            }
+    
+            .flight-delay-text p {
+                font-size: 16px;
+                line-height: 1.6;
+                color: #333;
+            }
+    
+            .flight-delay-text p strong {
+                color: #007BFF;
+            }
+    
+            .flight-delay-image {
+                max-width: 40%;
+                padding: 20px;
+            }
+    
+            .flight-delay-image img {
+                width: 100%;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+    
+            @media (max-width: 768px) {
+                .flight-delay-section {
+                    flex-direction: column;
+                    text-align: center;
+                }
+    
+                .flight-delay-text, .flight-delay-image {
+                    max-width: 100%;
+                    padding: 10px;
+                }
+            }
+        </style>
+    
+        <div class="flight-delay-text">
+            <h3>Un suivi de vol précis pour votre tranquillité</h3>
+            <p>
+                Peu importe le retard de votre vol, nos chauffeurs sont toujours <strong>informés en temps réel</strong> grâce à nos logiciels avancés de suivi des vols.
+                Vous pouvez voyager en toute sérénité : <strong>quoi qu'il arrive, votre chauffeur sera là pour vous accueillir</strong>.
+            </p>
+        </div>
+    
+        <div class="flight-delay-image">
+            <img src="vol retarder.png" alt="Un passager attendant son vol retardé">
+        </div>
+    </div>
+    
+
+    <div class="taxi-aeroport-content">
+        <style>
+            .taxi-aeroport-content {
+                max-width: 1200px;
+                margin: auto;
+                padding: 20px;
+                background: #fff;
+                color: #333;
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                border-radius: 5px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+    
+            h2, h3 {
+                color: #007BFF;
+                margin-bottom: 15px;
+            }
+    
+            ul {
+                list-style: none;
+                padding: 0;
+            }
+    
+            ul li {
+                margin-bottom: 10px;
+            }
+    
+            ul li strong {
+                color: #007BFF;
+            }
+    
+            p {
+                margin-bottom: 20px;
+            }
+    
+            .photo-gallery {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 20px;
+                margin: 20px 0;
+            }
+    
+            .photo-gallery img {
+                width: 100%;
+                border-radius: 5px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+        </style>
+    
+        <h2>Taxi Aéroport - Réservez votre trajet partout en France</h2>
+        <p>
+            Hopyou propose un service de <strong>taxi aéroport</strong> fiable et accessible dans toute la France. Que vous ayez besoin d'un 
+            <strong>taxi aéroport Marseille</strong>, <strong>taxi Lyon aéroport</strong>, ou encore un <strong>taxi Nice aéroport</strong>, nous sommes là pour vous offrir un 
+            <strong>trajet confortable</strong> à un <strong>prix fixe</strong>. Profitez de nos services premium vers <strong>CDG</strong>, <strong>Orly</strong>, et bien d'autres aéroports.
+        </p>
+    
+        <h3>Pourquoi choisir Hopyou pour vos trajets vers l'aéroport ?</h3>
+        <ul>
+            <li><strong>Disponibilité nationale :</strong> Réservez un <strong>taxi aéroport</strong> partout en France, y compris <strong>Toulouse</strong>, <strong>Bordeaux</strong>, et <strong>Nantes</strong>.</li>
+            <li><strong>Tarifs transparents :</strong> Nos <strong>tarifs taxi aéroport</strong> sont clairs et compétitifs, avec des options de <strong>forfaits</strong>.</li>
+            <li><strong>Service professionnel :</strong> Nos chauffeurs assurent un trajet fluide vers votre <strong>aéroport</strong>, que ce soit pour un départ ou une arrivée.</li>
+        </ul>
+    
+        <h3>Nos services de taxi aéroport dans les principales villes</h3>
+        <p>
+            Avec Hopyou, trouvez facilement un <strong>taxi aéroport</strong> adapté à vos besoins :
+        </p>
+        <ul>
+            <li><strong>Taxi aéroport Marseille :</strong> Une solution rapide pour vos déplacements vers l’aéroport de Marseille-Provence.</li>
+            <li><strong>Taxi Lyon aéroport :</strong> Un service fiable pour rejoindre l’aéroport de Lyon-Saint-Exupéry.</li>
+            <li><strong>Taxi Nice aéroport :</strong> Parfait pour vos départs ou arrivées à Nice-Côte d’Azur.</li>
+            <li><strong>Taxi aéroport CDG :</strong> Une prise en charge professionnelle à l’aéroport Charles de Gaulle.</li>
+            <li><strong>Taxi aéroport Orly :</strong> Réservez votre trajet à <strong>prix fixe</strong> pour l’aéroport d’Orly.</li>
+            <li><strong>Taxi aéroport Toulouse :</strong> Voyagez confortablement vers l’aéroport de Toulouse-Blagnac.</li>
+            <li><strong>Taxi aéroport Nantes :</strong> Une option fiable pour l’aéroport Nantes-Atlantique.</li>
+        </ul>
+    
+        <h3>Réservez votre taxi aéroport avec un tarif unique</h3>
+        <p>
+            Que ce soit pour un trajet vers un aéroport local ou international, nous offrons des <strong>tarifs fixes</strong> pour tous vos déplacements. Nos services incluent :
+        </p>
+        <ul>
+            <li><strong>Taxi aéroport pas cher :</strong> Une option économique pour vos trajets vers les aéroports.</li>
+            <li><strong>Forfait taxi aéroport :</strong> Un prix prédéfini pour éviter toute surprise.</li>
+            <li><strong>Taxi aéroport CDG pas cher :</strong> Profitez d’un trajet économique vers l’aéroport Charles de Gaulle.</li>
+        </ul>
+    
+        <h3>Questions fréquentes sur nos services de taxi aéroport</h3>
+        <ul>
+            <li><strong>Quels sont les tarifs pour un taxi aéroport à Marseille ?</strong> Découvrez nos <strong>tarifs taxi aéroport Marseille</strong> sur notre page dédiée.</li>
+            <li><strong>Proposez-vous un tarif fixe pour l’aéroport Orly ?</strong> Oui, réservez un <strong>taxi aéroport Orly prix fixe</strong> pour vos trajets.</li>
+            <li><strong>Offrez-vous des services pour des groupes ou familles ?</strong> Oui, nous proposons des véhicules adaptés pour plusieurs passagers.</li>
+        </ul>
+    
+        
+    
+    <!-- Pied de page -->
+    <footer>
+        <p>&copy; 2024 Hopyou. Tous droits réservés.</p>
+        <nav>
+            <a href="../index.html">Accueil</a> |
+            <a href="../contact/contact.html">Contact</a> |
+            
+            <a href="../cgv/cgv.html">Conditions Générales de Vente</a> |
+            <a href="../pdc/pdc.html">Politique de Confidentialité</a>
+        </nav>
+    </footer>
+
+    <!-- Script JavaScript pour la sélection de langue -->
+    <script>
+        function setLanguage(lang) {
+            alert("Langue sélectionnée: " + lang);
+        }
+    </script>
+</body>
+</html>

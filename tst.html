@@ -1,0 +1,139 @@
+<style>
+   /* En-tête transparent */
+.navbar {
+    background-color: transparent; /* Rend l'arrière-plan transparent */
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    padding: 10px 20px;
+    box-shadow: none; /* Supprime les ombres */
+}
+
+/* Liens du menu */
+.navbar .nav > li > a {
+    color: #fff; /* Couleur blanche pour un bon contraste */
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 15px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.navbar .nav > li > a:hover {
+    color: #ff9326; /* Couleur survol */
+}
+
+/* Bouton téléphone */
+.navbar .phone-button {
+    background-color: #28a745; /* Vert pour le bouton */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.navbar .phone-button:hover {
+    background-color: #218838; /* Couleur survol */
+}
+
+/* Bouton de langue */
+.navbar .language-button {
+    border: 1px solid white;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.navbar .language-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Dropdown pour les liens avec flèche */
+.dropdown-menu {
+    background-color: rgba(0, 0, 0, 0.8); /* Fond noir transparent */
+    border-radius: 4px;
+    padding: 10px 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none; /* Caché par défaut */
+}
+
+.navbar .dropdown:hover .dropdown-menu {
+    display: block; /* Afficher au survol */
+}
+
+.dropdown-menu > li > a {
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+}
+
+.dropdown-menu > li > a:hover {
+    background-color: #ff9326;
+    color: white;
+}
+
+/* Ajustements pour mobile */
+@media (max-width: 768px) {
+    .navbar .nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar .phone-button,
+    .navbar .language-button {
+        margin: 10px auto;
+    }
+}
+
+
+</style>
+<header class="navbar">
+    <div class="container">
+        <div class="logo">
+            <a href="/">
+                <img src="/media/images/logo.svg" alt="Hopyou Logo" width="50">
+            </a>
+        </div>
+        <ul class="nav">
+            <li><a href="/about.html">À Propos</a></li>
+            <li><a href="/contact.html">Contactez-nous</a></li>
+            <li><a href="/driver-space.html">Espace driver</a></li>
+            <li class="dropdown">
+                <a href="#">Aéroports &#9662;</a>
+                <ul class="dropdown-menu">
+                    <li><a href="/airport1.html">Aéroport 1</a></li>
+                    <li><a href="/airport2.html">Aéroport 2</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Gares &#9662;</a>
+                <ul class="dropdown-menu">
+                    <li><a href="/station1.html">Gare 1</a></li>
+                    <li><a href="/station2.html">Gare 2</a></li>
+                </ul>
+            </li>
+        </ul>
+        <button class="phone-button">
+            <span>📞 01 83 53 95 32</span>
+        </button>
+        <button class="language-button">
+            <img src="/media/images/icons/world.svg" alt="Language" width="20">
+            <span>FR &#9662;</span>
+        </button>
+    </div>
+</header>

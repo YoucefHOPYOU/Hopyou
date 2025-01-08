@@ -1,0 +1,29 @@
+# Active les options de base
+Options -Indexes
+Options +FollowSymLinks
+# Autoriser l'accès au fichier sitemap.xml
+<Files "sitemap.xml">
+    Require all granted
+</Files>
+
+# Définir l'encodage UTF-8 pour éviter les problèmes de caractères
+AddDefaultCharset UTF-8
+
+# Permet la réécriture d'URL
+RewriteEngine On
+
+# Rediriger vers www si vous voulez que toutes les URL passent par www
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [L,R=301]
+
+# Redirige vers HTTPS (sécurisé)
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [L,R=301]
+
+# Bloquer l'accès direct aux fichiers sensibles
+<FilesMatch "\.(htaccess|htpasswd|ini|phps|fla|psd|log|sh)$">
+   Deny from all
+</FilesMatch>
+
+# Autorise les crawlers à indexer les pages
+Header set X-Robots-Tag "all"

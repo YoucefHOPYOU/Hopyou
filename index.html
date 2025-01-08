@@ -1,0 +1,1689 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hopyou - Réserver un Taxi ou VTC 24/7 | Service Fiable</title>
+    <meta name="description" content="Hopyou vous offre un service de réservation de taxi et VTC fiable et rapide en France. Disponible 24h/24 et 7j/7, réservez  en ligne ou via notre application.">
+    <meta name="keywords" content="taxi, VTC, réservation taxi, réservation VTC, taxi aéroport, taxi gare, taxi en France, Hopyou, service de taxi 24/7, VTC rapide">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <meta name="p:domain_verify" content="bf8bb3982d3b93568fbce66f304c9dc0"/>
+
+    <!-- Favicon au format ICO (pour compatibilité avec anciens navigateurs) -->
+<link rel="shortcut icon" href="favicon.ico.zip" type="image/x-icon">
+
+<!-- Favicons au format PNG pour navigateurs modernes -->
+<link rel="icon" type="image/png" sizes="16x16" href="/images/FAVICON16PNG.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/FAVICON32PNG.png">
+
+<!-- Apple Touch Icon pour appareils Apple -->
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+
+</head>
+<style>
+    /* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* En-tête */
+/* Header */
+.header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: transparent;
+    z-index: 1000;
+}
+
+.header .logo img {
+    height: 80px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+/* Contact number button */
+.contact-number a {
+    background: rgb(122, 82, 150);
+    color: rgb(255, 251, 251);
+    padding: 10px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Hamburger menu - hidden on desktop */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hamburger .line {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex; /* Show hamburger on mobile */
+    }
+
+    .nav-menu {
+        display: none; /* Hide menu links by default */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .nav-menu.show {
+        display: flex; /* Show menu when hamburger is clicked */
+    }
+}
+
+
+/* Cover Section */
+.cover-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('photodecouv.png') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Formulaire */
+.form-container {
+    background-color: #5f3e93;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+form input::placeholder {
+    color: #999;
+}
+
+form .btn-submit {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+form .btn-submit:hover {
+    background-color: #444;
+}
+
+/* Texte de couverture */
+.cover-text h1 {
+    color: rgb(222, 6, 251);
+    font-weight: bold;
+    font-size: 24px;
+    text-shadow: 2px 2px 5px black;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: 2px solid mediumorchid ;
+    border-radius: 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .nav-menu li {
+        margin: 10px 0;
+    }
+
+    .nav-menu.show {
+        display: block;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .contact-number {
+        display: none;
+    }
+}
+/* Section Info */
+.info-section {
+    background-color: #fafcfe; /* Couleur bleue */
+    color: rgb(11, 10, 10);
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.info-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    width: 100%;
+    align-items: center;
+}
+
+/* Texte */
+.info-text {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+}
+
+.info-text h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.info-text p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.info-link {
+    color: #c22cf0; /* Jaune pour le lien */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.info-link:hover {
+    text-decoration: underline;
+}
+
+/* Boutons de téléchargement */
+.download-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn-download {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background: white;
+    color: #2f5fa9;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-download img {
+    width: 24px;
+    height: 24px;
+}
+
+.btn-download:hover {
+    background: #912cf0;
+    color: #040404;
+}
+
+/* Image */
+.info-image {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.info-image img {
+    max-width: 100%;
+    border-radius: 10px; /* Coins arrondis */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .info-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .info-text {
+        padding: 10px;
+    }
+
+    .download-buttons {
+        justify-content: center;
+    }
+
+    .info-image img {
+        margin-top: 20px;
+    }
+}
+/* Section Steps */
+.steps-section {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.steps-section h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Conteneur des étapes */
+.steps-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden; /* Pour limiter l'affichage au slider */
+    gap: 20px;
+    scroll-behavior: smooth; /* Transition fluide pour le slider */
+}
+
+/* Étape */
+.step {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    min-width: calc(100% - 20px); /* Slider sur mobile */
+    max-width: 100%; /* Largeur complète */
+}
+
+.step img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.step h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.step p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* Navigation (visible uniquement sur mobile) */
+.slider-navigation {
+    display: none;
+    margin-top: 20px;
+}
+
+.slider-navigation button {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 0 10px;
+}
+
+.slider-navigation button:hover {
+    background: #555;
+}
+
+/* Responsive : Desktop */
+@media (min-width: 769px) {
+    .steps-container {
+        flex-wrap: wrap;
+        justify-content: space-between; /* Colonnes pour desktop */
+        overflow: visible; /* Pas de slider sur desktop */
+    }
+
+    .step {
+        max-width: 30%; /* Affiche 3 colonnes sur desktop */
+        min-width: 280px;
+    }
+
+    .slider-navigation {
+        display: none; /* Cache les boutons sur desktop */
+    }
+}
+
+/* Responsive : Mobile */
+@media (max-width: 768px) {
+    .steps-container {
+        flex-wrap: nowrap; /* Activer le slider horizontal */
+        scroll-snap-type: x mandatory; /* Snap pour le slider */
+    }
+
+    .step {
+        scroll-snap-align: center; /* Centrer chaque slide */
+    }
+
+    .slider-navigation {
+        display: flex; /* Affiche les boutons sur mobile */
+        justify-content: center;
+    }
+}
+/* Section Hero */
+.hero-section {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+}
+
+.hero-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Image */
+.hero-image {
+    flex: 1;
+    max-width: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+/* Texte */
+.hero-text {
+    flex: 1;
+    max-width: 50%;
+}
+
+.hero-text h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.hero-text p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #666;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-image,
+    .hero-text {
+        max-width: 100%;
+    }
+
+    .hero-text h2 {
+        font-size: 24px;
+    }
+
+    .hero-text p {
+        font-size: 14px;
+    }
+}
+/* Section Vehicle */
+.vehicle-section {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+}
+
+.vehicle-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Texte */
+.vehicle-text {
+    flex: 1;
+    max-width: 50%;
+    text-align: left;
+}
+
+.vehicle-text h2 {
+    font-size: 28px;
+    color: #5a2ec4; /* Couleur violette */
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+
+.vehicle-text p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Images */
+.vehicle-images {
+    flex: 1;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.vehicle-images img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .vehicle-container {
+        flex-direction: column;
+    }
+
+    .vehicle-text,
+    .vehicle-images {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .vehicle-text h2 {
+        font-size: 24px;
+    }
+
+    .vehicle-text p {
+        font-size: 14px;
+    }
+}
+/* Section Transfer */
+.transfer-section {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.transfer-section h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Container */
+.transfer-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+/* Column */
+.transfer-column {
+    flex: 1;
+    max-width: 30%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.transfer-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.transfer-header .icon {
+    font-size: 24px;
+    color: #ff8800; /* Couleur de l'icône */
+}
+
+.transfer-header h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* List */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #0056b3;
+    transition: color 0.3s ease;
+}
+
+ul li a:hover {
+    color: #5100ff; /* Couleur au survol */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .transfer-container {
+        flex-direction: column;
+    }
+
+    .transfer-column {
+        max-width: 100%;
+    }
+}
+/* Section Baby Seat */
+.baby-seat-section {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+}
+
+.baby-seat-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+/* Texte */
+.baby-seat-text {
+    flex: 1;
+    max-width: 50%;
+}
+
+.baby-seat-text h2 {
+    font-size: 28px;
+    color: #5a2ec4; /* Couleur violette */
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+
+.baby-seat-text p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Image et formulaire */
+.baby-seat-image {
+    flex: 1;
+    max-width: 40%;
+    position: relative;
+    text-align: center;
+}
+
+.baby-seat-image img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+
+.baby-seat-form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 300px;
+}
+
+.baby-seat-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.baby-seat-form label {
+    font-size: 14px;
+    color: #333;
+}
+
+.baby-seat-form textarea {
+    font-size: 14px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+}
+
+.baby-seat-form button {
+    background: #5a2ec4;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.baby-seat-form button:hover {
+    background: #7a4ae6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .baby-seat-container {
+        flex-direction: column;
+    }
+
+    .baby-seat-text,
+    .baby-seat-image {
+        max-width: 100%;
+    }
+
+    .baby-seat-form {
+        position: relative;
+        transform: none;
+        left: 0;
+        bottom: 0;
+        margin-top: 20px;
+    }
+}
+/* Section Application */
+.app-section {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+}
+
+.app-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+/* Texte */
+.app-text {
+    flex: 1;
+    max-width: 50%;
+}
+
+.app-text h2 {
+    font-size: 28px;
+    color: #5a2ec4; /* Couleur violette */
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.app-text ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.app-text ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.app-text ul li img {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+}
+
+.app-text ul li p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* Boutons de téléchargement */
+.app-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.app-buttons a img {
+    width: 150px;
+    height: auto;
+}
+
+/* Image */
+.app-image {
+    flex: 1;
+    max-width: 50%;
+    text-align: center;
+}
+
+.app-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .app-container {
+        flex-direction: column;
+    }
+
+    .app-text,
+    .app-image {
+        max-width: 100%;
+    }
+
+    .app-text ul li img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .app-buttons a img {
+        width: 120px;
+    }
+}
+/* Footer Section */
+.footer {
+    background-color: #000;
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Banner */
+.footer-banner {
+    background: url('HOPYOU\ \(14\).png') no-repeat center center/cover;
+    padding: 40px 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.footer-banner h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer-banner p {
+    margin-bottom: 15px;
+}
+
+.footer-btn {
+    background: #ff8800;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Footer Content */
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-top: 1px solid #333;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 20px;
+}
+
+.footer-column h4 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #ff8800;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #ff8800;
+}
+
+.footer-column p {
+    margin-bottom: 10px;
+}
+
+/* Social Icons */
+.social-icons a {
+    color: #fff;
+    margin-right: 10px;
+    font-size: 18px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #ff8800;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #333;
+}
+
+.footer-bottom a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-column {
+        margin-bottom: 20px;
+    }
+}
+
+/* Bouton de soumission */
+.submit-button {
+    background-color: #FF5722;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #E64A19;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .booking-section {
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+    .form-group, .submit-button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+/* Styles globaux */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #4A00E0;
+    margin: 20px 0;
+}
+
+/* Section de réservation */
+.booking-section {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background: linear-gradient(45deg, #6B00B6, #4A00E0);
+    border-radius: 10px;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Style des champs */
+.booking-form {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    position: relative;
+}
+
+.form-group label {
+    color: #fff;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Suggestions Box */
+.suggestions-box {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    border-radius: 5px;
+    overflow: hidden;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.suggestion-item:hover {
+    background: #f1f1f1;
+}
+
+/* Bouton de soumission */
+.submit-button {
+    background-color: #FF5722;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #E64A19;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .booking-section {
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+    .form-group, .submit-button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #be0ba3;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+    background-color: #55008c;
+    transform: scale(1.05);
+}
+
+.button:active {
+    background-color: #45006e;
+    transform: scale(0.98);
+}
+
+
+</style>
+<body>
+    <!-- En-tête -->
+    <header class="header">
+        <div class="logo">
+            <img src="HY (1).png" alt="Logo Hopyou">
+        </div>
+
+        <nav>
+           
+            <ul class="nav-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="/proposdenous.html">À propos</a></li>
+                <li><a href="/devis-taxi/devis-taxi.html">💰Devis Taxi</a></li>
+                <li><a href="contact/contact.html">Contactez-nous</a></li>
+                <li><a href="/aeroport/aeroport.html">Aéroport✈️</a></li>
+                
+                
+            </ul>
+        </nav>
+        <div class="contact-number">
+            <a href="tel:09 80 80 04 62">📞09 80 80 04 62</a>
+        </div>
+        <style>
+            /* Styles généraux */
+            #custom-menu {
+                position: fixed;
+                top: 10px;
+                right: 10px;
+                z-index: 1000;
+                display: none; /* Par défaut, le menu est caché */
+            }
+        
+            /* Afficher le menu hamburger uniquement sur les écrans mobiles */
+            @media (max-width: 768px) {
+                #custom-menu {
+                    display: block; /* Afficher uniquement pour les écrans de largeur inférieure ou égale à 768px */
+                }
+            }
+        
+            /* Bouton Toggle (Menu Burger) */
+            .menu-toggle {
+                font-size: 1.5rem;
+                background-color: #6B00B6;
+                color: white;
+                border: none;
+                padding: 10px;
+                border-radius: 50%;
+                cursor: pointer;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+                transition: transform 0.3s ease, background-color 0.3s ease;
+            }
+        
+            .menu-toggle:hover {
+                background-color: #55008c;
+                transform: scale(1.1);
+            }
+        
+            /* Menu Mobile sur la droite */
+            .mobile-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100%;
+                background-color: #f4f4f9;
+                box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+                transition: right 0.4s ease;
+                display: flex;
+                flex-direction: column;
+                padding: 20px;
+                z-index: 999;
+            }
+        
+            .mobile-menu.active {
+                right: 0;
+            }
+        
+            /* Bouton pour fermer le menu */
+            .menu-close {
+                align-self: flex-end;
+                font-size: 1.5rem;
+                color: #333;
+                background: none;
+                border: none;
+                cursor: pointer;
+                margin-bottom: 20px;
+            }
+        
+            .menu-close:hover {
+                color: #6B00B6;
+            }
+        
+            /* Liens du menu */
+            .mobile-menu ul {
+                list-style: none;
+                padding: 0;
+            }
+        
+            .mobile-menu li {
+                margin: 15px 0;
+            }
+        
+            .mobile-menu a {
+                text-decoration: none;
+                font-size: 1.1rem;
+                color: #333;
+                font-weight: bold;
+                transition: color 0.3s ease;
+            }
+        
+            .mobile-menu a:hover {
+                color: #6B00B6;
+            }
+        
+            /* Boutons supplémentaires */
+            .call-button, .devis-button {
+                display: block;
+                margin: 15px 0;
+                padding: 10px;
+                text-align: center;
+                color: white;
+                border-radius: 5px;
+                font-size: 1rem;
+                font-weight: bold;
+                text-decoration: none;
+                transition: background-color 0.3s ease;
+            }
+        
+            .call-button {
+                background-color: #007bff;
+            }
+        
+            .call-button:hover {
+                background-color: #0056b3;
+            }
+        
+            .devis-button {
+                background-color: #28a745;
+            }
+        
+            .devis-button:hover {
+                background-color: #218838;
+            }
+
+        </style>
+        
+        <div id="custom-menu">
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <div class="mobile-menu" id="mobileMenu">
+                <button class="menu-close" onclick="toggleMenu()">✖</button>
+                <ul>
+                    <li><a href="/aeroport/aeroport.html">Taxi Aéroport✈️</a></li>
+                    <li><a href="/proposdenous.html">A propos de nous</a></li>
+                    <li><a href="/espacedriver/driver.html">Espace Drivers</a></li>
+                </ul>
+                <a href="tel:09 80 80 04 62" class="call-button">📞Appelez-nous</a>
+                <a href="/devis-taxi/devis-taxi.html" class="devis-button">💰Demander un Devis</a>
+            </div>
+        </div>
+        
+        <script>
+            function toggleMenu() {
+                const menu = document.getElementById('mobileMenu');
+                menu.classList.toggle('active');
+            }
+        </script>
+        
+    
+    </header>
+
+   <!-- Section Cover -->
+<section class="cover-section">
+    <div class="cover-content">
+        <div class="cover-text">
+            <h1>Réservez votre trajet en toute simplicité avec Hopyou</h1>
+            <p>Découvrez un service rapide, fiable et à la portée de tous.</p>
+        </div>
+        <!-- Formulaire intégré -->
+        <div class="booking-section">
+            <div class="booking-form">
+                <div class="form-group">
+                    <label for="departure">Adresse de départ</label>
+                    <input type="text" id="departure" placeholder="Entrez votre adresse de départ">
+                </div>
+                <div class="form-group">
+                    <label for="arrival">Adresse d'arrivée</label>
+                    <input type="text" id="arrival" placeholder="Entrez votre adresse d'arrivée">
+                </div>
+                <button class="button" onclick="window.location.href='devis-taxi/devis-taxi.html'">Demander un devis</button>
+
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <script src="script.js"></script>
+    <script>
+       const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
+
+hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('show'); // Add or remove the "show" class
+});
+
+
+    </script>
+   <section class="info-section">
+    <div class="info-container">
+        <div class="info-text">
+            <h2>Hopyou - Votre plateforme de réservation pour tous vos trajets</h2>
+            <p>Découvrez un vaste choix de services et de véhicules adaptés à vos besoins. Avec Hopyou, comparez les tarifs des taxis, VTC, et chauffeurs professionnels à travers la France et l’Europe. Que ce soit pour un trajet en taxi VTC, un transfert aéroport ou un déplacement en groupe avec un minibus, nous facilitons vos réservations en regroupant les meilleures options de transport. Profitez d'une solution fiable, rapide, et pratique pour vos déplacements dans les principales villes et régions.
+                
+                <a href="devis-taxi/devis-taxi.html" class="info-link">voir la liste des pays desservis</a>.
+            </p>
+            <!-- Boutons de téléchargement -->
+            <div class="download-buttons">
+                <a href="https://play.google.com/store/apps/details?id=com.hopyou.client.app&hl=fr" target="_blank" class="btn-download android-btn">
+                    <img src="/playstor.png" alt="Android Icon"> Télécharger sur Android
+                </a>
+                <a href="https://apps.apple.com/fr/app/hopyou/id6479308924" target="_blank" class="btn-download ios-btn">
+                    <img src="/appelstor.png" alt="iOS Icon"> Télécharger sur iOS
+                </a>
+            </div>
+        </div>
+        <div class="info-image">
+            <img src="client et application.png" alt="Plateforme de réservation" />
+        </div>
+    </div>
+</section>
+
+<section class="steps-section">
+    <h2>Comment fonctionne Hopyou</h2>
+    <div class="steps-container">
+        <!-- Étape 1 -->
+        <div class="step">
+            <img src="/applicationclient1.png" alt="Étape 1">
+            <h3>Choisissez votre point de départ et destination.</h3>
+            <p>Indiquez votre emplacement actuel et votre destination pour obtenir des offres en temps réel.</p>
+        </div>
+        <!-- Étape 2 -->
+        <div class="step">
+            <img src="/applicationclient2.png" alt="Étape 2">
+            <h3>Comparez les offres des chauffeurs.</h3>
+            <p>Recevez des propositions de taxis et VTC à proximité avec les prix et le temps d'arrivée estimé.</p>
+        </div>
+        <!-- Étape 3 -->
+        <div class="step">
+            <img src="/applicationclient3.png" alt="Étape 3">
+            <h3>Confirmez votre réservation en un clic.</h3>
+            <p>Sélectionnez l'offre qui vous convient le mieux, et suivez votre chauffeur jusqu'à l'arrivée.</p>
+        </div>
+    </div>
+    <!-- Boutons de navigation pour mobile -->
+    <div class="slider-navigation">
+        <button id="prev-btn">&#8249;</button>
+        <button id="next-btn">&#8250;</button>
+    </div>
+</section>
+<script>
+    const container = document.querySelector('.steps-container');
+const prevBtn = document.querySelector('#prev-btn');
+const nextBtn = document.querySelector('#next-btn');
+
+let currentScroll = 0;
+
+nextBtn.addEventListener('click', () => {
+    const stepWidth = container.offsetWidth;
+    currentScroll += stepWidth;
+
+    if (currentScroll >= container.scrollWidth) {
+        currentScroll = 0; // Revient au début
+    }
+
+    container.scrollTo({
+        left: currentScroll,
+        behavior: 'smooth',
+    });
+});
+
+prevBtn.addEventListener('click', () => {
+    const stepWidth = container.offsetWidth;
+    currentScroll -= stepWidth;
+
+    if (currentScroll < 0) {
+        currentScroll = container.scrollWidth - stepWidth; // Va à la dernière étape
+    }
+
+    container.scrollTo({
+        left: currentScroll,
+        behavior: 'smooth',
+    });
+});
+
+</script>
+<section class="hero-section">
+    <div class="hero-container">
+        <!-- Image -->
+        <div class="hero-image">
+            <img src="/accuilpancarte.png" alt="Chauffeur Hopyou">
+        </div>
+        <!-- Texte -->
+        <div class="hero-text">
+            <h2>Chauffeurs Hopyou : Accueil en Gare et Aéroport avec Pancarte</h2>
+            <p>
+                Avec Hopyou, profitez d'un service haut de gamme dès votre arrivée en gare ou à l'aéroport. 
+                Nos chauffeurs professionnels vous attendent avec une pancarte à votre nom, vous offrant ainsi un accueil personnalisé, 
+                que ce soit à l’aéroport Charles de Gaulle, Orly, ou à n’importe quelle gare en France.
+            </p>
+        </div>
+    </div>
+</section>
+<section class="vehicle-section">
+    <div class="vehicle-container">
+        <!-- Texte -->
+        <div class="vehicle-text">
+            <h2>Choisissez le Véhicule Parfait pour Vos Trajets avec Hopyou</h2>
+            <p>
+                Avec Hopyou, profitez d'un large choix de véhicules adaptés à vos besoins. Que vous voyagiez en solo, en groupe, ou que vous ayez besoin d'un transport rapide, nous avons la solution parfaite pour vous. 
+                Choisissez parmi nos options de berline, van ou moto pour un trajet confortable et adapté à vos attentes.
+            </p>
+            <p>
+                Peu importe votre choix, avec Hopyou, vous bénéficiez toujours d’un service fiable et d’un tarif fixe, sans surprise. 
+                Sélectionnez l’option qui vous convient directement via notre application et profitez d’un voyage personnalisé et confortable, 
+                avec une assistance client disponible 24h/24 et 7j/7.
+            </p>
+        </div>
+        <!-- Images -->
+        <!-- Image -->
+        <div class="hero-image">
+            <img src="/choixdv.png" alt="Chauffeur Hopyou">
+        </div>
+    </div>
+</section>
+<section class="transfer-section">
+    <h2>Réserver un transfert</h2>
+    <div class="transfer-container">
+        <!-- Colonne 1 -->
+        <div class="transfer-column">
+            <div class="transfer-header">
+                <span class="icon">✈️</span>
+                <h3>Réserver un taxi VTC à l’aéroport</h3>
+            </div>
+            <ul>
+                
+                <li><a href="https://www.hopyou.net/taxi-aéroport-charles-de-gaulle.html">Aéroport de Roissy Charles de Gaulle</a></li>
+                <li><a href="https://www.hopyou.net/taxi-a%C3%A9roport-d'orly.html">Aéroport d'Orly</a></li>
+                <li><a href="p">Aéroport de Nice Côte d’Azur</a></li>
+                <li><a href="#">Aéroport de Lyon Saint Exupéry</a></li>
+                <li><a href="#">Aéroport de Marseille Provence</a></li>
+                <li><a href="#">Aéroport de Toulouse Blagnac</a></li>
+                <li><a href="#">Aéroport de Bâle Mulhouse Fribourg</a></li>
+                <li><a href="#">Aéroport de Bordeaux Mérignac</a></li>
+                <li><a href="#">Aéroport de Beauvais Tillé</a></li>
+            </ul>
+        </div>
+
+        <!-- Colonne 2 -->
+        <div class="transfer-column">
+            <div class="transfer-header">
+                <span class="icon">🚉</span>
+                <h3>Réserver un taxi VTC à la gare</h3>
+            </div>
+            <ul>
+                <li><a href="https://www.hopyou.net/taxi-gare-du-nord.html">Gare du Nord</a></li>
+                <li><a href="https://www.hopyou.net/taxi-gare-saint-lazare.html">Gare Saint-Lazare</a></li>
+                <li><a href="https://www.hopyou.net/taxi-gare-de-lyon.html">Gare de Lyon</a></li>
+                <li><a href="https://www.hopyou.net/taxi-gare-d'austerlitz.html">Gare d’Austerlitz</a></li>
+                <li><a href="https://www.hopyou.net/taxi-gare-montparnasse.html">Gare Montparnasse</a></li>
+                <li><a href="#">Gare de Lyon-Part-Dieu</a></li>
+                <li><a href="#">Gare de Lille-Flandres</a></li>
+                <li><a href="https://www.hopyou.net/taxi-gare-du-nord.html">Gare de Magenta</a></li>
+                <li><a href="https://www.hopyou.net/taxi-gare-de-l'est.html">Gare d'Ermont - Eaubonne</a></li>
+            </ul>
+        </div>
+
+        <!-- Colonne 3 -->
+        <div class="transfer-column">
+            <div class="transfer-header">
+                <span class="icon">📍</span>
+                <h3>Réserver un taxi VTC en ville</h3>
+            </div>
+            <ul>
+                <li><a href="https://www.hopyou.net/taxi-paris.html">Paris</a></li>
+                <li><a href="#">Marseille</a></li>
+                <li><a href="#">Lyon</a></li>
+                <li><a href="#">Toulouse</a></li>
+                <li><a href="#">Nice</a></li>
+                <li><a href="#">Nantes</a></li>
+                <li><a href="#">Strasbourg</a></li>
+                <li><a href="#">Montpellier</a></li>
+                <li><a href="#">Bordeaux</a></li>
+                <li><a href="#">Rennes</a></li>
+                
+            </ul>
+        </div>
+    </div>
+</section>
+<section class="baby-seat-section">
+    <div class="baby-seat-container">
+        <!-- Texte -->
+        <div class="baby-seat-text">
+            <h2>Réservez un Taxi avec Siège Bébé Partout en France</h2>
+            <p>
+                Avec Hopyou, disponible partout en France, réservez facilement un <strong>taxi avec siège bébé</strong> pour garantir la sécurité et le confort de vos enfants lors de vos trajets. 
+                Que vous soyez à Paris, Lyon, Marseille, ou dans n'importe quelle autre ville française, notre application vous permet de cocher l'option siège bébé lors de votre réservation, afin que votre véhicule soit équipé pour transporter vos petits passagers en toute sérénité.
+            </p>
+            <p>
+                Peu importe votre destination, que ce soit un trajet vers l'aéroport, la gare, ou une simple course en ville, Hopyou vous assure un tarif fixe et transparent, sans surprise, et un service adapté à vos besoins familiaux. 
+                Choisissez Hopyou pour une expérience fiable, que vous soyez en vacances, en déplacement professionnel, ou simplement en déplacement quotidien avec vos enfants.
+            </p>
+        </div>
+        <!-- Image et formulaire -->
+        <div class="baby-seat-image">
+            <img src="/taxisiég-bébé.png" alt="Siège bébé dans un taxi">
+            
+        </div>
+    </div>
+</section>
+<section class="app-section">
+    <div class="app-container">
+        <!-- Texte avec icônes -->
+        <div class="app-text">
+            <h2>Téléchargez l’application Hopyou et Réservez Facilement</h2>
+            <ul>
+                <li>
+                    <img src="/Sans titre (80 x 80 px) (1).svg" alt="Icône réservation">
+                    <p>Réservation immédiate ou à l'avance (jusqu'à 60 jours)</p>
+                </li>
+                <li>
+                    <img src="/Sans titre (80 x 80 px).svg" alt="Icône suivi">
+                    <p>Suivi en temps réel de l'arrivée de votre chauffeur</p>
+                </li>
+                <li>
+                    <img src="/Sans titre (80 x 80 px) (3).svg" alt="Icône paiement sécurisé">
+                    <p>Paiement sécurisé via l’application</p>
+                </li>
+                <li>
+                    <img src="/Sans titre (80 x 80 px) (2).svg" alt="Icône Hopyou Connect">
+                    <p>Option Hopyou Connect : Prenez un taxi en rue et payez via l’appli</p>
+                </li>
+            </ul>
+            <div class="app-buttons">
+                <a href="https://apps.apple.com/fr/app/hopyou/id6479308924">
+                    <img src="appelstor.png" alt="App Store">
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.hopyou.client.app&hl=fr">
+                    <img src="playstor.png" alt="Google Play">
+                </a>
+            </div>
+        </div>
+        <!-- Image -->
+        <div class="app-image">
+            <img src="/Design sans titre (62).png" alt="Application Hopyou">
+        </div>
+    </div>
+</section>
+<footer class="footer">
+    <div class="footer-banner">
+        <h3>CHAUFFEUR?</h3>
+        <p>Rejoignez-nous, des clients vous attendent !</p>
+        <a href="/espacedriver/driver.html" class="footer-btn">EN SAVOIR PLUS</a>
+    </div>
+    <div class="footer-content">
+        <!-- Colonne 1 : Contact -->
+        <div class="footer-column">
+            <h4>hopyou</h4>
+            <p>📞09 80 80 04 62</p>
+            <p>✉️ <a href="contact@hopyou.net">contact@hopyou.net</a></p>
+           
+        </div>
+        <!-- Colonne 2 : Informations -->
+        <div class="footer-column">
+            <h4>INFO</h4>
+            <ul>
+                <li><a href="#">Questions fréquentes</a></li>
+                <li><a href="#">Véhicules</a></li>
+                <li><a href="#">À propos</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Location car</a></li>
+            </ul>
+        </div>
+        <!-- Colonne 3 : Conditions -->
+        <div class="footer-column">
+            <h4>CONDITIONS</h4>
+            <ul>
+                <li><a href="cgv/cgv.html">Conditions Générales</a></li>
+                <li><a href="">Politique de Confidentialité</a></li>
+                <li><a href="#">Charte Qualité</a></li>
+            </ul>
+        </div>
+        <!-- Colonne 4 : Réseaux sociaux -->
+        <div class="footer-column">
+            <h4>SOCIAL</h4>
+            <p>Suivez-nous pour bénéficier de réductions spéciales et voyager toujours moins cher.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2024 Tous droits réservés <strong>hopyou.net</strong></p>
+        <a href="#" class="cookie-settings">Paramètres des cookies</a>
+    </div>
+</footer>
+
+
+
+
+
+
+    
+</body>
+</html>
+
+
+
+
+
