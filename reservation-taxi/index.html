@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Réserver un Taxi Partout en France | Devis Gratuit & Immédiat - Hopyou.net</title>
+
+<meta name="description" content="Réservez un taxi facilement partout en France grâce à Hopyou. Obtenez un devis gratuit instantané avec carte interactive et prix affiché selon le trajet. Service rapide, fiable et disponible 24/7. Réservez dès maintenant !">
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Maps API -->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBB7s2H1W0UqLLGzIB9fXnNHJ14Ljg12wQ&libraries=places&callback=initMap "></script>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>Réserver un Taxi</h1>
+      <p>Sélectionnez vos options et obtenez un devis instantané</p>
+    </header>
+
+    <form id="reservationForm" action="reservation.php" method="POST">
+      <!-- Informations personnelles -->
+      <div class="form-group">
+        <label for="name">Nom & Prénom</label>
+        <input type="text" id="name" name="name" required/>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required/>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Téléphone</label>
+        <input type="tel" id="phone" name="phone" required/>
+      </div>
+
+      <!-- Adresses -->
+      <div class="form-group">
+        <label for="origin">Adresse de départ</label>
+        <input type="text" id="origin" name="origin" required/>
+      </div>
+
+      <div class="form-group">
+        <label for="destination">Adresse d’arrivée</label>
+        <input type="text" id="destination" name="destination" required/>
+      </div>
+
+      <!-- Date et heure -->
+      <div class="form-group">
+        <label for="date">Date de prise en charge</label>
+        <input type="datetime-local" id="date" name="date" required/>
+      </div>
+
+      <!-- Passagers / Bagages -->
+      <div class="form-group">
+        <label for="passengers">Nombre de passagers</label>
+        <input type="number" id="passengers" name="passengers" min="1" max="8" value="1" required/>
+      </div>
+
+      <div class="form-group">
+        <label for="luggage">Nombre de bagages</label>
+        <input type="number" id="luggage" name="luggage" min="0" value="1" required/>
+      </div>
+
+      <!-- Options -->
+      <div class="form-group">
+        <label><input type="checkbox" id="babySeat" name="babySeat"/> Siège bébé</label>
+      </div>
+
+      <div class="form-group">
+        <label><input type="checkbox" id="pet" name="pet"/> Animal de compagnie</label>
+      </div>
+
+      <!-- Commentaire -->
+      <div class="form-group">
+        <label for="comment">Commentaire (facultatif)</label>
+        <textarea id="comment" name="comment"></textarea>
+      </div>
+
+      <!-- Type de véhicule -->
+      <div class="form-group">
+        <label for="vehicleType">Type de véhicule</label>
+        <select id="vehicleType" name="vehicleType" required>
+          <option value="berline">Berline</option>
+          <option value="eco">Éco</option>
+          <option value="van">Van</option>
+        </select>
+      </div>
+      
+      <!-- Carte -->
+<div class="map-container">
+    <button id="calculateRoute" type="button" class="btn">Calculer le trajet</button>
+    <div id="map" class="map"></div>
+    <div id="routeDetails" class="route-details hidden">
+      <p><strong>Distance :</strong> <span id="distance"></span> km</p>
+      <p><strong>Durée estimée :</strong> <span id="duration"></span></p>
+      <p><strong>Prix estimé :</strong> <span id="displayTotalPrice">0.00</span> €</p>
+    </div>
+  </div>
+  
+  <!-- Champ caché pour envoyer au serveur -->
+  <input type="hidden" name="totalPrice" id="totalPrice" />
+      
+      <!-- Soumettre -->
+      <button type="submit" class="btn submit-btn">Confirmer la réservation</button>
+    </form>
+  </div>
+
+  <!-- Script principal -->
+  <script src="script.js" defer></script>
+</body>
+</html>
